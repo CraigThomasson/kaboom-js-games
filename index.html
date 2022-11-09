@@ -1,0 +1,39 @@
+<script type="module">
+
+    // import kaboom lib
+    import kaboom from "https://unpkg.com/kaboom/dist/kaboom.mjs";
+    
+    kaboom({
+
+font: "sinko",
+
+background: [0, 0, 255,],
+})
+
+loadSprite("bean", "sprits/wizards-f.png");
+loadSprite("floor-2", "sprits/floor-2.png")
+
+// add a character to screen
+add([
+// list of components
+sprite("bean"),
+pos(80, 40),
+area(),
+]);
+
+addLevel([
+    '          ',
+    '          ',
+    '          ',
+    'xxxxxxxxxx',
+], {
+    width: 100,
+    height: 100,
+    "x": () => [
+        sprite("floor-2"),
+        area(),
+        solid(),
+    ],
+})
+
+    </script>
