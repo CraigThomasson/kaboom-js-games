@@ -1,38 +1,20 @@
-<script type="module">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>cool game</title>
+</head>
+<body>
 
-    // import kaboom lib
-    import kaboom from "https://unpkg.com/kaboom/dist/kaboom.mjs";
-    
-    kaboom({
+    <div class="container">
+        <div id="canvas-container" class="mx-auto card">
+            <canvas id="mycanvas" class="mx-auto"></canvas>
+        </div>
+    </div>
+    <script type="module" src="game.js"></script>
+</body>
+</html>
 
-
-
-background: [0, 0, 0,],
-})
-
-loadSprite("bean", "sprits/wizards-f.png");
-loadSprite("ground", "sprits/ground.png")
-
-// add a character to screen
-add([
-// list of components
-sprite("bean"),
-pos(80, 40),
-area(),
-]);
-
-addLevel([
-    '          ',
-    '          ',
-    'xxxxxxxxxx',
-], {
-    width: 31,
-    height: 100,
-    "x": () => [
-        sprite("ground"),
-        area(),
-        solid(),
-    ],
-})
-
-    </script>
