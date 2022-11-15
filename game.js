@@ -11,8 +11,10 @@ kaboom({
     background: [ 15, 33, 12, ],
 })
 
-loadSprite("bean", "sprites/wizards-f.png")
-loadSprite("ground", "sprites/ground.png")
+loadSprite("bean", "sprites/bean.png")
+loadSprite("ground", "sprites/ground-2.png")
+loadSprite("enemy", "sprites/enemy-1.png")
+
 // add a character to screen
 const player = add([
 // list of components
@@ -53,7 +55,7 @@ addLevel([
 '       xxx          ',
 '              xxx   ',
 '       xxx          ',
-'              xxx   ',
+'        ~     xxx   ',
 '       xxx          ',
 '              xxx   ',
 '       xxx          ',
@@ -64,6 +66,12 @@ height: 100,
 "x": () => [
     sprite("ground"),
     area(),
+    solid(),
+],
+"~": () => [
+    sprite("enemy"),
+    area(),
+    body(),
     solid(),
 ],
 })
