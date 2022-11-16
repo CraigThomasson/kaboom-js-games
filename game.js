@@ -27,7 +27,14 @@ body(),
 const MOVE_SPEAD = 200
 
 
-// player movement
+// player mechanics
+
+player.onCollide("danger", () => {
+    destroy(player)
+})
+
+// player movements
+
 player.onUpdate(() => {
     camPos(player.pos)
 })
@@ -48,7 +55,7 @@ onKeyPress("w", () => {
 
 // maps
 
-addLevel([
+const level1 = addLevel([
 '                    ',
 '                    ',
 '              xxx   ',
@@ -73,6 +80,7 @@ height: 100,
     area(),
     body(),
     solid(),
+    'danger',
 ],
 })
 
